@@ -5,6 +5,7 @@ networks:
 volumes:
   prometheus_data: {}
   grafana_data: {}
+  alertmanager-data: {}
 
 services:
   node-exporter:
@@ -30,7 +31,7 @@ services:
     container_name: prometheus
     restart: unless-stopped
     volumes:
-      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./prometheus:/etc/prometheus/
       - prometheus_data:/prometheus
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
@@ -42,6 +43,20 @@ services:
       - 9090:9090
     networks:
       - monitoring
+
+  alertmanager:
+    image: prom/alertmanager:latest
+    restart: unless-stopped
+    container_name: alertmgr
+    ports:
+      - "9093:9093"
+    volumes:
+      - "./alertmanager:/config"
+      - alertmanager-data:/data
+    command: --config.file=/config/alertmanager.yml --log.level=debug
+    networks:
+      - monitoring
+
 
   grafana:
     image: grafana/grafana:latest
