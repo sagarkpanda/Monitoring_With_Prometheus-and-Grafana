@@ -6,7 +6,7 @@ Monitoring Linux Server with Prometheus and Grafana. Node and Blackbox exporter.
 <img alt="Grafana" width="270px" src="https://raw.githubusercontent.com/devicons/devicon/develop/icons/grafana/grafana-original.svg" style="padding-right:10px;" />
 </p>
 </br>
-<h3> <strong> Read the detailed article on: </strong> </h3> <a href = "https://sagarkrp.medium.com/list/kubernetes-a0f8fab4ee0d" target ="_blank">
+<h3> <strong> Read the detailed article on: </strong> </h3> <a href = "https://medium.com/devops-dev/setup-monitoring-prometheus-and-grafana-2431b26cd757" target ="_blank">
 
 <picture>
    <source media="(prefers-color-scheme: dark)" srcset="https://github.com/sagarkrp/sagarkrp/blob/main/images/Medium-white1x.png" width="160px" height="35px">
