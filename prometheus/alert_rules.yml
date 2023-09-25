@@ -11,7 +11,8 @@ groups:
         summary: "Instance [{{ $labels.instance }}] down"
         description: "[{{ $labels.instance }}] of job {{ $labels.job }} has been down for more than 15 seconds."
 
- - name: NodeMemUsgae
+
+- name: NodeMemUsgae
    rules:
     - alert: HostMemoryIsUnderutilized
       expr: ({__name__="node_memory_MemAvailable_bytes", instance="node-exporter:9100", job="node"} > 80)
@@ -22,7 +23,7 @@ groups:
         summary: Host Memory is underutilized (instance {{ $labels.instance }})
         description: "Node memory is < 20% for 1 week. Consider reducing memory space. (instance {{ $labels.instance }})\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}"
 
-  - name: HTTP_Status_Failure
+- name: HTTP_Status_Failure
   rules:
     - alert: BlackboxProbeHttpFailure
       expr: probe_http_status_code <= 199 OR probe_http_status_code >= 400
