@@ -56,8 +56,19 @@ services:
     command: --config.file=/config/alertmanager.yml --log.level=debug
     networks:
       - monitoring
-
-
+ 
+  blackbox:
+    image: prom/blackbox-exporter:latest
+    # privileged: true
+    restart: unless-stopped
+    container_name: Blackbox
+    volumes:
+      - ./blackbox/blackbox.yml:/etc/blackbox_exporter/config.yml
+    ports:
+      - '9115:9115'
+    networks:
+      - monitoring
+      
   grafana:
     image: grafana/grafana:latest
     container_name: grafana
