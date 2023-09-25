@@ -11,8 +11,8 @@ groups:
         summary: "Instance [{{ $labels.instance }}] down"
         description: "[{{ $labels.instance }}] of job {{ $labels.job }} has been down for more than 15 seconds."
 
-# - name: NodeMemUsgae
-  # rules:
+ - name: NodeMemUsgae
+   rules:
     - alert: HostMemoryIsUnderutilized
       expr: ({__name__="node_memory_MemAvailable_bytes", instance="node-exporter:9100", job="node"} > 80)
       for: 15s
@@ -21,3 +21,25 @@ groups:
       annotations:
         summary: Host Memory is underutilized (instance {{ $labels.instance }})
         description: "Node memory is < 20% for 1 week. Consider reducing memory space. (instance {{ $labels.instance }})\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}"
+
+  - name: HTTP_Status_Failure
+  rules:
+    - alert: BlackboxProbeHttpFailure
+      expr: probe_http_status_code <= 199 OR probe_http_status_code >= 400
+      for: 0m
+      labels:
+        severity: critical
+      annotations:
+        summary: Blackbox probe HTTP failure (instance {{ $labels.instance }})
+        description: "HTTP status code is not 200-399\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}"
+
+- name: SSL_Expiry
+  rules:
+    - alert: BlackboxSslCertificateWillExpireSoon
+      expr: 0 <= round((last_over_time(probe_ssl_earliest_cert_expiry[10m]) - time()) / 86400, 0.1) < 60
+      for: 0m
+      labels:
+        severity: warning
+      annotations:
+        summary: Blackbox SSL certificate will expire soon (instance {{ $labels.instance }})
+        description: "SSL certificate expires in less than 200 days\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}"
