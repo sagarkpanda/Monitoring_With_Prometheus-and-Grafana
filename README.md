@@ -13,8 +13,11 @@ Prometheus is a open-source platform for monitoring hardware and services. It co
 ## Setup:
 In this article we are going to see how to setup monitoring of a linux machine.
 
-I’m going to use Docker to setup this process, however you can install binaries as usual.
+I’m going to use Docker to setup this process, however you can install binaries as usual. The docker compose consists of multiple components.
 
+- First setup - Prometheus with Grafan. Viewing Server resources usgae using Node Exporter.
+- Second setup - Prometheus alert manager for mail alerts for server usage.
+- Third setup - Prometheus Blackbox exporter setup to view and monitor website metrics. Also sendd alerts.
 </br>
 <h3> <strong> Read the full articles on: </strong> </h3> <a href = "https://medium.com/devops-dev/setup-monitoring-prometheus-and-grafana-2431b26cd757" target ="_blank">
 
