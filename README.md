@@ -6,7 +6,17 @@ Monitoring Linux Server with Prometheus and Grafana. Node and Blackbox exporter.
 <img alt="Grafana" width="270px" src="https://raw.githubusercontent.com/devicons/devicon/develop/icons/grafana/grafana-original.svg" style="padding-right:10px;" />
 </p>
 </br>
-<h3> <strong> Read the detailed article on: </strong> </h3> <a href = "https://medium.com/devops-dev/setup-monitoring-prometheus-and-grafana-2431b26cd757" target ="_blank">
+
+# Introduction:
+Prometheus is a open-source platform for monitoring hardware and services. It collects metrics from the system of any other services that we configured.
+
+## Setup:
+In this article we are going to see how to setup monitoring of a linux machine.
+
+I’m going to use Docker to setup this process, however you can install binaries as usual.
+
+</br>
+<h3> <strong> Read the full articles on: </strong> </h3> <a href = "https://medium.com/devops-dev/setup-monitoring-prometheus-and-grafana-2431b26cd757" target ="_blank">
 
 <picture>
    <source media="(prefers-color-scheme: dark)" srcset="https://github.com/sagarkrp/sagarkrp/blob/main/images/Medium-white1x.png" width="160px" height="35px">
@@ -14,6 +24,4 @@ Monitoring Linux Server with Prometheus and Grafana. Node and Blackbox exporter.
    <img alt="Medium Alternative Theme." src="https://raw.githubusercontent.com/sagarkrp/sagarkrp/main/images/Medium-dark.svg" width="160px" height="35px">
 </picture> </a> </br> &nbsp
 
-
 ![image](https://github.com/sagarkrp/Prometheus_Grafana/assets/42873729/096fb27b-af85-4fdb-95bd-655c2a77463f)
-
