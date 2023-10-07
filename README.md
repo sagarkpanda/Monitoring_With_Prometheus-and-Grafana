@@ -27,4 +27,8 @@ I’m going to use Docker to setup this process, however you can install binarie
    <img alt="Medium Alternative Theme." src="https://raw.githubusercontent.com/sagarkrp/sagarkrp/main/images/Medium-dark.svg" width="160px" height="35px">
 </picture> </a> </br> &nbsp
 
+# Node Exporter Dashboard:
 ![image](https://github.com/sagarkrp/Prometheus_Grafana/assets/42873729/096fb27b-af85-4fdb-95bd-655c2a77463f)
+
+# Blackbox Dashboard
+![blackbox](https://github.com/sagarkrp/Monitoring_With_Prometheus-and-Grafana/assets/42873729/2dbc07a8-bc27-4866-a293-646420df3d44)
