@@ -1,3 +1,17 @@
-*.yml linguist-language=YAML linguist-detectable
-*.yaml linguist-language=YAML linguist-detectable
-*.json linguist-language=JSON linguist-detectable
+#*.yml linguist-language=YAML linguist-detectable
+#*.yaml linguist-language=YAML linguist-detectable
+#*.json linguist-language=JSON linguist-detectable
+
+# Markdown
+*.md linguist-detectable=true
+*.md linguist-documentation=false
+
+# JSON
+*.json linguist-detectable=true
+
+# YAML
+*.yml linguist-detectable=true
+*.yaml linguist-detectable=true
+
+# Text
+*.txt linguist-detectable=true
